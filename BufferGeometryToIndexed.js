@@ -182,7 +182,7 @@ THREE.BufferGeometry.prototype.toIndexed = function () {
 	}
 
 
-	function indexBufferGeometry( src, dst, fullIndex, excludeAttributes ) {
+	function indexBufferGeometry( src, dst, fullIndex ) {
 
 		_src = src;
 
