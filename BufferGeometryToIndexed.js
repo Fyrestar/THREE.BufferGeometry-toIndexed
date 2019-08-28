@@ -276,6 +276,19 @@ THREE.BufferGeometry.prototype.toIndexed = function () {
 
 		}
 
+		
+		// Groups
+
+		const groups = src.groups;
+
+		for ( let i = 0, l = groups.length; i < l; i ++ ) {
+
+			const group = groups[ i ];
+
+			dst.addGroup( group.start, group.count, group.materialIndex );
+
+		}
+
 
 		// Release data
 
@@ -300,15 +313,6 @@ THREE.BufferGeometry.prototype.toIndexed = function () {
 
 		indexBufferGeometry( this, geometry, fullIndex === undefined ? true : fullIndex );
 
-		const groups = this.groups;
-
-		for ( let i = 0, l = groups.length; i < l; i ++ ) {
-
-			const group = groups[ i ];
-
-			geometry.addGroup( group.start, group.count, group.materialIndex );
-
-		}
 
 		return geometry;
 
