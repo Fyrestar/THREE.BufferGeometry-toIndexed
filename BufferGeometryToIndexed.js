@@ -124,8 +124,6 @@ THREE.BufferGeometry.prototype.toIndexed = function () {
 
 	function store( index, n ) {
 
-		const v = index * 3 + n;
-
 		let id = '';
 
 		for ( let i = 0, l = attributesKeys.length; i < l; i++ ) {
@@ -155,7 +153,7 @@ THREE.BufferGeometry.prototype.toIndexed = function () {
 
 			vertices[ id ] = list.length;
 
-			list.push( v );
+			list.push( index * 3 + n );
 
 		}
 
